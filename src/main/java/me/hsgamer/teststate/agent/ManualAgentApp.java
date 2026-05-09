@@ -1,6 +1,6 @@
-package me.hsgamer.testgenesis.agent;
+package me.hsgamer.teststate.agent;
 
-import me.hsgamer.testgenesis.client.Agent;
+import me.hsgamer.teststate.client.Agent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +28,7 @@ public class ManualAgentApp extends JFrame {
     private Agent agent;
 
     public ManualAgentApp() {
-        setTitle("TestGenesis Manual Agent");
+        setTitle("TestState Manual Agent");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 450);
         setMinimumSize(new Dimension(400, 300));
@@ -155,12 +155,12 @@ public class ManualAgentApp extends JFrame {
 
     public void showLogin() {
         cardLayout.show(container, "LOGIN");
-        setTitle("TestGenesis Manual Agent");
+        setTitle("TestState Manual Agent");
     }
 
     public void showIdle() {
         cardLayout.show(container, "IDLE");
-        setTitle("TestGenesis Manual Agent [IDLE]");
+        setTitle("TestState Manual Agent [IDLE]");
     }
 
     public void bringToFront() {
@@ -178,7 +178,7 @@ public class ManualAgentApp extends JFrame {
 
     public void showAcknowledgePrompt(String sessionId, CompletableFuture<Boolean> future) {
         bringToFront();
-        setTitle("TestGenesis Manual Agent [PENDING]");
+        setTitle("TestState Manual Agent [PENDING]");
         
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(240, 244, 248));
@@ -237,7 +237,7 @@ public class ManualAgentApp extends JFrame {
 
     public void showTestStep(int index, int total, String description, CompletableFuture<ManualTestProcessor.StepResult> future) {
         bringToFront();
-        setTitle("TestGenesis Manual Agent [TESTING]");
+        setTitle("TestState Manual Agent [TESTING]");
         
         JPanel testPanel = new JPanel(new BorderLayout(15, 15));
         testPanel.setBorder(new EmptyBorder(25, 25, 25, 25));
